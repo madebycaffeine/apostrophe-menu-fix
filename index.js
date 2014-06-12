@@ -12,6 +12,9 @@ function Construct(options, callback) {
   var app = options.app;
   var pages = options.pages;
   var self = this;
+  
+  if(!options.depth) 
+	options.depth = 1;
 
   self.loader = function(req, callback){
   	// we want to fetch the menus since apostrophe won't do 
@@ -22,12 +25,11 @@ function Construct(options, callback) {
 		async.waterfall([
 			function(next){
 				apos.getPage(req, '/', {}, function(err, page){
-					console.log('home page', page);
 					next(err, page);
 				});	
 			},
 			function(home, next){
-				pages.getDescendants(req, home, {orphan: false}, { depth: 2 }, function (err, pages) {
+				pages.getDescendants(req, home, {orphan: false}, { depth: options.depth }, function (err, pages) {
 					req.extras.menu = pages;
 					return next(err);
 				});
