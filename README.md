@@ -3,6 +3,8 @@ apostrophe-notfound-fix
 
 Apostrophe 2 has an issue that prevents it from showing menus on 404 pages. This module is a quick fix to this issue, until the core developers will address the bug.
 
+This module needs to be cloned in to the `lib/modules` folder in your site folder.
+
 To add this to your Apostrophe 2 site, simply add this line under `modules` in `app.js`:
 ```javascript
 'apostrophe-menu-fix': {}
