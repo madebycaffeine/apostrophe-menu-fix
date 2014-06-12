@@ -7,7 +7,6 @@ This module needs to be cloned in to the `lib/modules` folder in your site folde
 
 To add this to your Apostrophe 2 site, simply add this line under `modules` in `app.js`:
 ```javascript
-<<<<<<< HEAD
 'apostrophe-menu-fix': {
 }
 ```
@@ -20,11 +19,6 @@ You can also set the number of the depth of your menu simply like this:
 ```
 by default the depth is set to 1.
 
-=======
-'apostrophe-menu-fix': {}
-```
-
->>>>>>> b889e04443f020c74e238173238d4af2f5341d79
 Then, in your views, instead of using `page.tabs` to iterate over the menus, use `menu`. For example, in the sandbox, the default menu looks like this:
 ```
 <ul class="tabs">
